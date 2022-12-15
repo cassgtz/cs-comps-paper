@@ -16,265 +16,129 @@
 
 % include metadata in the generated pdf file
 \pdfinfo{
-    /Title (The Occidental Computer Science Comprehensive Project: Goals, Timeline, Format, and Advice)
-    /Author (Justin Li)
+    /Title (The Occidental Computer Science Comprehensive Project: Helping Users Attain Recommended Vitamin Intake Values)
+    /Author (Cassandra Gutierrez)
 }
 
 % set the title and author information
-\title{The Occidental Computer Science Comprehensive Project: \\ Goals, Timeline, Format, and Advice}
-\author{Justin Li}
+\title{The Occidental Computer Science Comprehensive Project: \\ Helping Users Attain Recommended Vitamin Intake Values}
+\author{Cassandra Gutierrez}
 \affiliation{Occidental College}
-\email{justinnhli@oxy.edu}
+\email{gutierrezc@oxy.edu}
 
 \begin{document}
 
 \maketitle
 
-\section{Introduction}
+\begin{abstract}
+This paper serves as an overview of my Computer Science senior comprehensive project at Occidental College, a nutrition application. The function of the application is to help people meet their recommended micro nutritional intake values as they grocery shop. The main focus is on influencing users to take home nutrient-rich foods that will supplement any vitamin deficiencies in their diet. 
+\end{abstract}
 
-This document serves describes the Oxy CS Comps process.
-The first section describes the timeline of comps, as well as the main requirements of a comps project.
-Since one of the main deliverable is a final paper, there is then an interlude on {\LaTeX}, which you will use to write the paper.
-This document then goes into the sections of that final paper and what is expected of it.
-We conclude with some miscellaneous tips for successfully completing comps.
+\section{Problem Context}
 
-\section{Computer Science Comps}
+In order to promote health and prevent diseases, the United States has dietary guidelines in place for its citizens. They include specific calorie, macronutrient, and micronutrient (minerals and vitamins) intake values for various age groups, genders, and subpopulations with special dietary needs (pregnant females, athletes, ect.). However, most Americans do not follow these guidelines. As of 2020, the average American diet adheres to only 59\% of the U.S. Dietary Guidelines.\cite{DGM} An especially significant issue is the long-term prevalence of micronutrient deficiencies in the average American. For instance, 95\% of the U.S. population does not meet the necessary intake for vitamin D, 84\% for vitamin E, 46\% for vitamin C, 45\% for vitamin A, and so on. This is important because inadequacy of micronutrients impairs immune function and has a detrimental impact on one’s long-term health by increasing the risk of developing chronic diseases.\cite{drake_2022} In fact, the Dietary Guidelines for Americans and the World Health Organization have established the inadequate intake of select vitamins as a public health issue.\cite{NHANES_2020}  
 
-Occidental's ``Comprehensive Requirement'' is a graduation requirement that serves two goals: ``to provide an opportunity for senior students to synthesize the essential[s] [...] of their academic field'', and ``to provide an opportunity for students to demonstrate competence in their field'' \cite{OccidentalComps}.
-For computer science, the breadth of the field means that comps leans heavily towards the second goal: most CS comps are large coding projects that showcase what a student has learned in their four years at Oxy.
-In that sense, a CS comps project is more like a Studio Arts comps project: you could draw from multiple subfields or focus on just one, but the essence is to take on a complex project of your choice while situating it within the methods of CS.
+The problem at hand is that the U.S. population does not have nutrient-rich eating habits, which has adverse effects on the health of the population as a whole. This project aims to close these micronutrient gaps by helping users increase their micronutrient consumption to adhere to the recommended intake values for Americans. Specifically, it will allow users to scan all their grocery items in order to identify the nutrients that they are lacking in their grocery haul as a whole. Additionally, it will provide users with a list of foods they can buy that contain a high amount of the micronutrients that they need in order to supplement any identified inadequacies. 
 
-\subsection{Timeline}
+\section{Technical Background}
 
-Since comps is a significant undertaking, the CS major curriculum has two courses to support comps projects.
-Most students will take CS Junior Seminar in the spring of their junior year, then take CS Senior Seminar in the fall of their senior year.
-One of the main goals of Junior Seminar is to prepare students for their comps project, including selecting a topic, exploring the literature, and writing a detailed proposal of what they will do.
-The entirety of Senior Seminar is dedicated to students completing their comps; however, it is necessary to separate the Senior Seminar course from the comps graduation requirement.
-Senior Seminar is a required course for the CS major, and it concludes at the end of the fall semester with a grade.
-Comps, on the other hand, is an Oxy graduation requirement, and concludes at the end of the senior year with either ``fail'', ``pass'', or ``pass with distinction'' \cite{OccidentalComps}.
-While the sole purpose of Senior Seminar is to support students working on comps, it is possible for a student to complete the \textit{course} without completing the \textit{graduation requirement}.
-This could occur, for example, if the student ran out of time to finish the project, but submitted all the assignments for Senior Seminar.
-In that case, the student will continue working in the spring senior semester to complete their comps, until they have a ``pass'' or ``pass with distinction'' result.
-A summary of this timeline can be found in Table \ref{tbl:timeline}.
-
-\begin{table}
-    \footnotesize
-    \begin{tabular}{r|cl}
-        \textbf{Semester}       &  \textbf{Course}  &  \textbf{Deliverable(s)}          \\
-        \hline \\
-        \textbf{Junior Spring}  &  COMP 390         &  Comps proposal; Tutorial report  \\
-        \textbf{Summer}         &  -                &  Additional research              \\
-        \textbf{Senior Fall}    &  COMP 490         &  Comps final paper; Code repo     \\
-        \textbf{Senior Spring}  &  -                &  Revisions; Honors                \\
-    \end{tabular}
-    \caption{Timeline summary for comps.}
-    \label{tbl:timeline}
-\end{table}
-
-\subsection{Deliverables}
-
-The two main deliverables for CS comps is the code from the project, submitted together with its documentation as a GitHub link, and a paper about the project.
-While the code component is straightforward and uncontroversial, some students may chafe against the idea of a paper.
-Contrary to popular believe, the job of a software engineer does not only involve writing code.
-It also requires a large amount of written communication, such as tickets for bugs reports, proposals for new features and why it will improve the product, comments on why a class is necessary or how a function works, and documentation of the system architecture.
-As software engineers rise from junior to senior positions, these responsibilities only increase.
-It is often lamented that not enough engineers know how to write \cite{Mei2018WhyDevelopersShould,Alton2020WhyEveryDeveloper}, which is why Google has created courses on technical writing \cite{GoogleTechnicalWriting}, and ``soft skills'' are routinely touted as necessary for software developers \cite{Indeed202111ImportantSoft}.
-
-\begin{comment}
-    Why a paper?
-    Goals for the paper
-\end{comment}
-
-Given these goals, the final paper should be written for an advanced CS undergraduate: someone who has finished Math Foundations, Data Structures, and Computer Organization, but may not have taken the appropriate upper-level courses.
-The paper does not need to explain everything, but should provide enough relevant details so the average reader can understand your results; a walkthrough of the sections of the paper can be found in Section \ref{sec:paper}.
-The paper will be written in LaTeX, to make all final papers uniform in style and to allow for psuedocode and mathematical equations; a template will be provided and required.
-To ensure there is sufficient context and detail, the paper should be about seven pages in length (excluding figures, tables, code, and references).
-The target audience for the paper is other computer science majors in their final year of college, but who may not have taken the same electives that you have.
-That is, you should assume that they have working knowledge of data structures, discrete math, and computer systems, but not necessarily any knowledge of artificial intelligence, machine learning, databases, or other more advanced topics.
-
-The other major deliverable is the code, which should be made available on a public GitHub repository.
-Accompanying the code should be two pieces of documentation, both included in a \texttt{README.md}.
-First, there should be instructions for how to run the code, which should including how to find and install necessary software and packages, how to find and download relevant datasets, and what other requirements (hardware, spatial needs for VR, etc.) are needed.
-This should be written for an audience who is interested in reproducing your work and verifying your results.
-Second, there should be a brief overview of how the code is organized, including the major components that exist and the content and format of the data that is passed between them.
-This should be written for someone who is interested in extending your project --- say, by tweaking the parameters, or adding new functionality, or applying it to a new context.
-
-More details about both deliverables will be provided in the Junior and Seminar Seminars.
-
-\begin{comment}
-    something about non-code projects?
-\end{comment}
-
-\subsection{Selecting a Comps Project}
-
-For many students, selecting a topics for comps is a major source of stress.
-While this is an important decision, it is also one for which you will receive a lot of support.
-Choosing a topic, together with ensuring that you have the relevant background and experience for the project, is a major component of Junior Seminar.
-There have also been students who change their project during Senior Seminar, and still finished their comps within the semester; although this is not recommended, this delayed timeline shows how much leeway there is for exploration and backpedaling.
-
-As a rough guide, comps projects should be equivalent to the work of an upper-level CS elective, and should either dive deeply but narrowly into a subfield of CS, or reach broadly across subfields or across disciplines without being too shallow.
-The only constraint on the topic is that CS+Math and CS+X students must select a project that fits within their theme, and should check with their academic advisor to make sure this is the case.
-Although double majors could do both comps on the same topic, they must have aspects that are unique to each major.
-For example, a cognitive science and computer science double major could do both projects around biologically plausible neural networks, but the cognitive science project might be about comparing its activity to real brains, while the CS project might instead focus on its algorithmic performance.
-We will spend more time on this in class, but you might consider the following prompts in brainstorming your project:
+I developed a web application for this project. This section will go over the primary technical aspects that the project is composed of. 
 
 \begin{itemize}
-    \item What topics were you most interested in from your classes? What area of CS would you like to dive deeper into?
-    \item Alternately, what topic were you unable to take a class in (either due to full enrollments, or because Oxy doesn't offer it)?
-    \item What interdisciplinary topics or CS-adjacent topics would you like to explore?
-    \item What projects might be a good showcase of your abilities to potential employers in your desired field?
+\item \textbf{Project Setup:} The web application is written in Javascript. Javascript is a programming language that works in conjunction with HTML and CSS to allow you to create dynamic web pages.\cite{mozilla} The user interface is created with React, a front-end javascript library based on the concept of components.\cite{REACT} Components work like functions that return individual HTML that users see on a webpage, like a button for example. The web application was bootstrapped with Create React App, a toolchain that handles all the set up for a React project.\cite{react_app}
+
+\item \textbf{Data:} This project accesses nutritional data through the use of a database application programming interface (API). Database APIs enable the exchange of data between an application and a database management system.\cite{winsberg_2022} Although you can do many things with APIs, this project only sends requests for data (using a formatted string defined by the database management system) called GET requests. The API that is used in this project responds with the requested data in JSON format. JSON data is text-based data that is structured based on JavaScript Object Notation.\cite{winsberg_2022}  The data is composed of JSON elements that have a name and associated data, similar to a key/value pair except JSON data can be hierarchical by nesting elements.
+
+\item \textbf{Hosting:} Hosting a web application simply means storing your project on a web server to make it available to the World Wide Web. If you do not host your website, nobody will be able to access it on the internet–only on individual machines using localhost. Hosting is usually done using a third-party web service provider. This project’s web application is hosted on GitHub Pages, a free hosting service that takes HTML, CSS, and JavaScript files directly from your GitHub repository.\cite{github}
 \end{itemize}
 
-A list of past comps projects can be found online.\footnote{\url{https://www.oxy.edu/academics/areas-study/computer-science/past-senior-comps-projects}}
+\section{Prior Work}
+There exists various nutrition applications that aim to help users get adequate nutrient intake for general health. For example, one of the most widely used dietary mobile applications is called MyFitnessPal. It is meant to allow users to log everything that they eat throughout the day, sums up the amount of nutrients that they've eaten, and tells the user whether or not they’ve met their daily goal for each nutrient.\cite{myfitnesspal} If a user has only eaten 0.7 grams of potassium, the application will tell them they have 4 grams of potassium left to eat for the day. However, the application does not tell users what they can eat to get 4 grams of potassium in. It gives them the problem, but not a solution. The average person would not know what food contains a certain amount of whatever micronutrient. Additionally, MyFitnessPal only includes information for 5 micronutrients (Vitamin A, Vitamin C, Potassium, Iron, and Calcium), leaving out all other vital micronutrients for health. Another nutrition mobile application that is most similar to this project (in the sense of a grocery shopping use case) is called Shopwell.\cite{innit} It works by setting your dietary preferences (low fat, more vitamin C, no lactose, ect.) so that you can scan grocery items to see if it aligns with said preferences. It also allows users to discover grocery items that align with their preferences. While Shopwell can guide users to buy grocery items that are high in specific micronutrients, it only provides options for 6 of them (Vitamin A, Vitamin C, Potassium, Iron, Calcium, and Folic Acid). In all, most nutrition applications leave out a lot of micronutrients that are of concern to the Dietary Guidelines of Americans and the World Health Organization, as previously mentioned in section 1.\cite{NHANES_2020}
 
-\section{Interlude: Using \LaTeX}
+On the other hand, there are many applications on the web that focus solely on all micronutrients. They consist of quizzes about a user’s lifestyle and health symptoms to determine what micronutrients they may be lacking and provide users with foods that they can eat which contain those micronutrients. However, these quizzes focus on a user’s current state. It does not promote consistent intake of micronutrients since the user may have to keep retaking the quiz to see if they are on track with all their micronutrients. It’s a lot of clerical work that may be time consuming which could delineate users from utilizing the tool and, ultimately, fulfilling the objective.
 
-LaTeX (pronounced \textit{lah-teck} or \textit{lay-teck}), often stylized as {\LaTeX} and written as latex, is a document markup language and typesetting system.
-Building on the {\TeX} language created by Donald Knuth in 1978, LaTeX provides additional commands for common document needs such as sections, figures, and bibliographies.
-LaTeX is widely used in academia, especially in mathematical fields, due to how easy it is to write mathematical equations and its automatic management of references.
-Since it is a markup language, LaTeX source files are written in plain text, which also makes it compatible with version control systems like git.
+My web application, on the other hand, focuses solely on a wide array of micronutrients (14 of them to be exact) and helping users conveniently add micronutrient-rich foods to their diet, consequently increasing their intake. The primary takeaway for users are the recommendations of micro-nutrient rich foods that are based on user-specific deficiencies. The goal is to get users to buy foods that will supplement their micronutrient inadequacies before they leave the grocery store. 
 
-The most primitive syntax of LaTeX is the \textit{macro} or \textit{command}, which is always written with a backslash followed by the name of the command.
-The {\LaTeX} glyph, for example, can be created with the command \texttt{\textbackslash LaTeX}.
-Some commands take parameters, which are denoted in braces (e.g., \texttt{\textbackslash usepackage\{biblatex\}} will import the \texttt{biblatex} package), with some commands additionally accepting options in square brackets (e.g., \texttt{\textbackslash usepackage[style=numeric]\{biblatex\}}).
-The \texttt{\textbackslash begin} and \texttt{\textbackslash end} commands are special, as they indicate the start and end of an \textit{environment}.
-The content of a LaTeX document, for example, is surrounded by \texttt{\textbackslash begin\{document\}} and \texttt{\textbackslash end\{document\}}, indicating the text that should appear in the document.
+\section{Methods}
+\subsection{Solidifying the Project}
+The motive behind my project was primarily to  gain new skills that I will use in my career after graduation. Since I want to go into the software engineering field and I did not get to take some major courses related to this field during my time at Oxy (Mobile Apps, Full Stack, Software Engineering, etc.), I decided to build an application (mobile or web) for my COMPS project. I simply wanted to take this project as an opportunity to get myself familiar with new software, languages, tools, etc. that I will possibly need in the industry. I chose to focus on the topic of diet and nutrition for the simple fact that a lot of my friends and family members are gym-goers or athletes that use dieting apps to track their food intake. Therefore, I had convenient access to this particular set of target users that I would need for user interviews, user testing, ect. For this reason, my initial app idea was centered around macronutrient and calorie counting. 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.95\linewidth]{recursion.png}
-    \caption{
-        The current page of this paper, as an image.
-    }
-    \label{fig:first-page}
-\end{figure}
+The initial app was aimed at addressing the lack of meal variety that comes with macronutrient/calorie counting. The idea was to provide users with a variety of recipes and grocery lists of the recipe's ingredients based on the user’s desired macronutrient/calorie values. I began working on this idea by conducting informal, 15-minute interviews with target users about their relationship with macro/calorie tracking, meal planning, and grocery shopping. I stopped after the 7th interview because there was an obvious trend in everybody’s answers. I found that people who track their macronutrient and calorie intake generally do not mind eating the same meals and grocery items because it provides them with the reassurance that they are consistently hitting their targets. In other words, they don’t really care about variety because they rely on what they know will ultimately fulfill their goals. As a result, my initial idea would not be helpful to these users so I discarded it. With this in mind, I could not think of an alternative app idea for this set of target users that doesn’t already exist. 
 
-Beyond the basic syntax, much of learning LaTeX is learning the different commands and environments that exist.
-For example, text can be made \textbf{bold} with \texttt{\textbackslash textbf}, \textit{italic} with \texttt{\textbackslash textit}, and \texttt{monospaced} with \texttt{\textbackslash texttt} (the \texttt{tt} stands for for ``teletype'').
-Single dollar signs denote inline equations, so \texttt{\$E = mc \textasciicircum 2\$} will be rendered as $E = mc^2$.
-Double dollar signs will render the equation in display mode, which we can see with the quadratic formula:
+After discussing my interview findings with Professor Justin Li, he suggested that I redirect my target users to the opposite end of the spectrum–everyday people who generally don’t look into the nutritional aspect of their diets. In keeping my project within the same realm of nutrition, he helped me come up with the idea of analyzing any nutritional deficiencies of the diet of somebody who just eats whatever they want. I decided to frame this idea in the context described in section 1 of this paper. I then conducted another round of interviews for this new app idea with everyday people that do not adhere to any diet or have special nutritional needs. They consisted of informal, 5-minute conversations about whether or not they would be interested in knowing what nutrients they lack in their diet. I found that although many people are not conscious of the things that they eat, they’d still be interested in being made aware of the nutritional aspect of their eating habits. One thing to note about these interviews is that a lot of people said they were not willing to do any clerical work or memorization of the things that they ate in order to have their diet analyzed. As a result, for my COMPS project, I decided to move forward with a web application that is meant to be used while users do their grocery shopping. Since groceries are generally what compromises one’s diet, I thought this would be a convenient and logical way to gather the necessary data about users’ diets. This way, there won’t be any memorizing or logging of meals that the target users are unwilling to do. 
 
-$$\frac{{-b \pm \sqrt {b^2 - 4ac} }}{{2a}}$$
+\subsection{Solving the Problem: Food Recommendations}
+Since the application is framed within the issue of addressing micro nutritional inadequacies, I need to provide users with a way to fix their inadequacies. In other words, I must provide a solution to the problem. According to the Institute of Medicine (US) Committee on Micronutrient Deficiencies, there are 4 effective solutions to micronutrient inadequacies.\cite{howson_kennedy_horwitz_1998} They are supplementation, food fortification, dietary diversification, and public health measures. While all of these strategies are effective, I cannot implement public health measures for this project because that would necessitate policy change, which I do not have power over. I also cannot implement food fortification because that would require the involvement and compliance of the food industry. That leaves me with the options of supplementation and dietary diversification. While they are both effective strategies, research shows that dietary diversification is the more logical and cost efficient approach as opposed to supplementation.\cite{howson_kennedy_horwitz_1998} Therefore, I chose to help users address their micro nutritional inadequacies through dietary diversification. 
 
-There are also a handful of common environments:
+Dietary diversification is the practice of increasing “the variety and quantity of micronutrient-rich foods” at the household level.\cite{jsi_2016} In order to implement dietary diversification for my web application, I decided to provide users with micronutrient-rich food recommendations that they can add to their diet to supplement their micronutrient deficiencies. This seemed like the most logical approach since the application’s use case is for grocery shopping. It would be convenient for users to buy the recommended food items right then and there since they would already be at a grocery store. Purchasing the recommended foods ultimately results in an increase of micronutrient-rich foods at the users’ household–dietary diversification. 
 
-\begin{itemize}
-    \item \texttt{itemize} for bulletpoint lists
-    \item \texttt{enumerate} for numbered lists
-    \item \texttt{figure} for figures (see Figure \ref{fig:first-page})
-    \item \texttt{table} and \texttt{tabular} for tables (see Table \ref{tbl:timeline})
-    \item \texttt{lstlisting} for code listings (see Listing \ref{lst:python-hello-world})
-\end{itemize}
+The recommendations are pulled from the micronutrient food sources that are listed on the National Institute of Health’s dietary supplement facts sheets for health professionals.\cite{NIH} The fact sheet for each micronutrient contains a table with several food sources of the micronutrient and states that, “Foods providing 20\% of more of the DV are considered to be high sources of a nutrient.”\cite{NIH} Since the goal of dietary diversification is to increase micronutrient-rich foods, I am only including high food sources of micronutrients as recommendations in the app. While this does limit the variety of options for recommendations, I think it’s important to stick to nutritious foods as opposed to foods that contain low amounts of micronutrients. For example, some of the tables in the fact sheets include many foods that contain as low as 1\% (and even 0\%) of the recommended intake values. If I choose to recommend these foods to users and the users choose to buy said low-content options, it would not increase the user’s intake of the micronutrient by much. I want to recommend foods that will significantly close the micronutrient gap for users while still providing an array of options. Therefore, I think 20\% is a good marker and is still considered a high food source by the National Institute of Health. Potassium is the only micronutrient included in the app whose fact sheet does not list any food sources that contain 20\% or more of the recommended intake value.\cite{potassium} In this case I decided to include foods that contain 10\% or more of the recommended intake value in order to still provide some recommendations for users. 
 
-\begin{lstlisting}[
-    language=Python,
-    caption={Hello, World! in Python},
-    label={lst:python-hello-world},
-    float
-]
-def hello():
-    print('hello, world!')
-\end{lstlisting}
+The food recommendations were picked and stored manually in a JSON object in the ListContainer.js file of the project. All of the food recommendations are displayed statically by micronutrient, regardless of the micronutrient amount that they contain. I made these decisions due to time constraints. I would have liked to use an existing database and API to search for foods that contain high amounts of a micronutrient. This would have provided users with more food options that perhaps are not listed on the fact sheets. Additionally, it could have made the app more accurate by recommending foods that fulfill the specific amount of a micronutrient that users are not getting enough of. For example, if the user needs 4 grams of potassium and the app calculates that the user’s groceries contain 1 gram of potassium, I could search for foods that have 3 or more grams of potassium to precisely supplement the user’s deficiencies. Unfortunately, the recommendations were the last step in the development of the app and I did not have time to implement it using a database. 
 
-This covers the most frequently used commands, but as you might have already inferred, LaTeX is a vast and deep system, and can easily be overwhelming.
-We recommended reading through the \citetitle{Overleaf2021LearnLaTeXIn} tutorial \cite{Overleaf2021LearnLaTeXIn} and using the \citetitle{WikiBook2022LaTeX} \cite{WikiBook2022LaTeX} as reference.
-Beyond that, you should examine and play with the source of this document to gain working proficiency with LaTeX.
+\subsection{Micronutrients Included the App}
+The term micronutrients refers to vitamins and minerals. There are a total of 14 vitamins and 16 minerals that we need to consume on a daily basis according to a list created by Harvard Health based on information from the Institute of Medicine.\cite{harvard_health_2020} That is 30 micronutrients in total and while they may all be essential for good health, I do not want to overwhelm users with a lot of information. Analyzing users' diets for 30 micronutrients could lead to lots of food recommendations that users may not want to bother looking through. In order to narrow down the micronutrients included in the app, I decided to focus on 1 group–-vitamins. The main reason being that the Edamam API, which extracts the micro nutritional information of grocery items for this app, provides more data for vitamins than minerals. Specifically, it provides data for exactly 11 vitamins and only 7 minerals.\cite{edamam_doc} There is simply more data available for the vitamins than the minerals of grocery items. The only 3 vitamins from the list provided by Harvard Health that the API’s database doesn’t include are Biotin, Choline, and B5. While I could have included all the micro nutritional data that the API provides (18 total), I thought 18 micronutrients would still be overwhelming for users. For these reasons, I decided to simply focus on vitamins. Although, I did include 3 select minerals for reasons discussed promptly. 
 
-One final note on writing in LaTeX.
-Since LaTeX is only a markup language, the source files must be compiled into a viewable form, most commonly into a PDF file.
-The source of this document is made up of several files, each with its own purpose:
-\begin{itemize}
-    \item \texttt{document.tex} - The main LaTeX file containing the contents of the document.
-    \item \texttt{oxycomps.sty} - A style file with settings for what the document should look like.
-    \item \texttt{references.bib} - A list of bibliography items.
-    \item Other files containing images, build instructions, etc.
-\end{itemize}
-Manual compilation of these files is somewhat esoteric, as it requires multiple uses of the \texttt{pdflatex} and \texttt{biblatex} commands.
-Instead, it is much easier to use tools such as \texttt{pdflatex} or \texttt{latexmk} (in the terminal) or Overleaf (online) for compilation.
-We have also provided a \texttt{Makefile} which will automatically update the document as necessary; the use of makefiles is beyond the scope of this document, but see \textcite{Lambert2021MakefileTutorial}.
+While testing the Edamam API I noticed that, for certain food items, there was missing data for several vitamins. After doing some research on nutrition labels, I found that the U.S. Food and Drug Administration (USDA) only requires food manufacturers to list the micronutrients Potassium, Calcium, Iron, and Vitamin D on nutrition labels.\cite{USDA} This is because Americans are especially deficient in those select micronutrients as of 2018. All other micronutrients can be listed optionally by the discretion of food manufacturers. This means that there will only be guaranteed data for the same 4 micronutrients for every food item that users input. This creates a major data limitation for a lot of vitamins, which entails a constraint on the app’s ability to accurately analyze users’ diets for vitamin deficiencies. If a food item contains a high amount of a vitamin (say Vitamin B12), but its nutrition label does not list it because it is not required, the app will assume that it has no Vitamin B12 and that the user is lacking Vitamin B12. After discussing this issue with Professor Justin Li, he suggested the best option was to make users aware of the inaccuracies of the app and let users decide whether or not they wanted to show the non-required vitamins as missing or not. With this, I decided to implement a setting that lets users choose between 2 things: (1) only check for the 4 micronutrients that are legally required on nutrition labels or (2) check for the 4 required micronutrients as well as the rest of the vitamins from the API (14 total micronutrients). The first option allows for complete accuracy and the second entails a potential limitation of accuracy. This is implemented using a toggle switch on the starting page of the app and is explained via text below the toggle. The default of the toggle is on the first setting, so that users must voluntarily consent to the inaccuracies of the app by switching the toggle to the second setting. Implementing this feature means I had to include the 3 minerals that are required on nutrition labels instead of focusing only on vitamins. This works out because they are minerals that Americans are significantly lacking, according to the USDA.\cite{USDA} Since the purpose of this project is to close the micronutrition gaps in the American diet, it falls in line with the goals of the project.
 
-\begin{comment}
-No definition citations, unless the term itself is in dispute
-Separate problem background from technical background
-    Unclear if games and apps require much technical background
-    The general structure of the framework might be better suited for the Architecture Overview section
-        Eg. Flask uses decorators to associate functions with URLs
-        Eg. Unity has scripts associated with objects and specific triggers, such as walking into an area, pressing a button, etc.
-    Maybe a better name is "algorithmic background"?
-        Should explore what does and doesn't count
-            All ML counts
-            App and game frameworks do not
-        Framework vs. library?
-            I like the idea of [inversion of control](https://martinfowler.com/bliki/InversionOfControl.html), but that may be too abstract for students to understand
-        Heuristic: is understanding that system necessary to understand the results?
-            Ie. How Flask or Unity works doesn't influence whether the app/game is useful/fun/engaging
-            But how (say) linear regression works is highly relevant for why the results match/don't match the actual values
-\end{comment}
+In short, this app can check a user's groceries for deficiencies in a total of 14 micronutrients. They include 11 vitamins–Vitamin A, Thiamin, Riboflavin, Niacin, Vitamin B6, Vitamin B12, Vitamin C, Vitamin D, Vitamin E, Vitamin K, and Vitamin B9–and 3 minerals–Calcium, Iron, and Potassium. The app by default checks for deficiencies in Potassium, Calcium, Iron, and Vitamin D. If a user toggles the switch to check for all micronutrients, the app will check for deficiencies in all of the 14 micronutrients. 
 
-\section{The Oxy CS Comps Paper}
-\label{sec:paper}
+\subsection{Narrowing target users}
 
-This section will walk through the different sections of the comps final paper.
-Note that your specific paper may not have all these sections; for example, it is common for app design projects to combine the methods and evaluation sections, to better match the iterative design process.
-Nonetheless, your paper should have all of the \textit{content} described here.
+The U.S. Dietary Guidelines have specific guidelines for different age groups. This means that recommended intake values change depending on age. They change for age groups from birth-6 months, 7–12 months, 1–3 years, 4–8 years, 9–13 years, 14–18 years, 19–50 years and 51+ years of age. Since the use case for this app is a grocery shopping one, I decided to make the target user age 19-50 years because it is unlikely that anybody under 19 is doing their own grocery shopping. Additionally, it is common for elderly folk to have health issues that require special dietary needs which I do not feel comfortable handling since I am not a health professional and the app has the potential to be inaccurate (due to data limitations discussed in section 4.3). Therefore, I decided to cut off the target user age to 50. On that same note, this app is not meant to be used by anybody with special dietary needs (e.g. persons that are pregnant, lactating, ect.) for the same reasons that I am not qualified to be handling them and do not want to risk any health effects from the app being inaccurate. These user exclusions are explicitly stated at the top of the starting page of the app. As a result, the app uses the recommended intake values for people ages 19-50. 
 
-\subsection{Introduction and Problem Context}
+This project aims to solve micronutrient gaps in American diets. Consequently, much of its content is tailored for the U.S. population. For instance, the Edamam database contains a lot of data for American food products. I am unaware if it includes data about foreign food products so that people from other countries can use the app. Additionally, the food sources that the app recommends are curated by an American organization so they are typical to an American diet and accessible in the U.S. For these reasons, the app may not be fit for users in other countries, although they can still potentially use it to analyze their diet. 
 
-This section should motivate why the project is interesting both to you and to the computer science community or the general public.
-You should also justify the difficult of the project.
-As a rough guideline, your project should be either narrow but deep in a subfield of CS, or broadly reaching across subfields without being too shallow.
-It should be comparable to the amount of work/content in an upper-level elective.
+\subsection{App Development}
+This section will go over the methods I used to develop the app for this project. It is organized in chronological order of development, focusing on the main technical components and decisions. 
 
-\subsection{Technical Background}
+I decided to create a web application in Javascript using the Create React App. This decision ultimately came down to time constraints. I began working on the app 2 months before the deadline so I needed a framework/programming language/tool that I could learn quickly. After asking my computer science peers and professors for advice, I concluded that creating a web application would be the more “simple” approach as opposed to a mobile application. I decided to create the app in React because (1) I had some basic experience with Javascript and (2) it’s very commonly used in the web development industry. After all, I did want to learn a skill that I could utilize after graduation. I began by watching lots of Javascript and React tutorials. All of these tutorials used Create React App, so that is what I did to set up my app as well. 
 
-This section introduces the technical knowledge necessary to understand your project, including any terminology and algorithms.
-You should assume that the reader is a CS undergraduate like yourself, but not necessarily familiar with AI/ML/HCI/apps/video games/etc.
+In order to gather users’ grocery items, I integrated a barcode-scanning software called Scandit SDK.\cite{Scandit_SDK} Since the target users mentioned they were not willing to do clerical work, I figured scanning grocery items’ barcodes would be the quickest and least taxing on users as opposed to typing in and searching for specific foods like some nutrition apps do. The idea is for them to scan all of their grocery items once they have them all gathered and ready to check out. The barcode scanner is integrated as a component from a library and allows users to efficiently input their grocery items. There are many barcode scanning softwares to choose from but I decided on Scandit SDK because it was free. Although one usually has to pay to use it after 30 days, they provided me with a free license key for the duration of the semester for the academic purposes of this project. I reached out to other barcode-scanning software companies for a free trial but Scandit was the first to reply so I immediately got to work. 
 
-\subsection{Prior Work}
+Next, I needed an API to extract the micro nutritional data of grocery items using their barcodes. This was a trial and error process. I began testing free APIs but a lot of them did not have an extensive database for American food products. Then, I found an API that did have an extensive database and began working with it but quickly encountered issues with the way that its data was structured. It listed micronutrient values per 100 grams of the food item instead of per the serving size, which is how nutrition label values are normally measured. To get around this, I planned on simply multiplying 100 grams by the serving amount of the food in grams. However, the serving size data would list things like “1 shake” or “1 bar” with no numerical value for me to do calculations with. I decided to keep searching for an API and ultimately decided on the Edamam food database API after extensive testing.\cite{edamam_doc} It is free, has an extensive database of American food products, and returns micronutrient value data per serving size. 
 
-This section describes of related and/or existing work.
-This could be scientific or scholarly, but may also be a survey of existing products/games.
-The goal of this section is to put your project in the context of what has already been done.
+In order to determine what micronutrients a user is lacking in their diet, the app analyzes the micro nutritional values of their grocery items as a whole. The idea is for the user to scan all of their grocery items and extract all the micronutrient values per serving size. Then, add up all the values for each micronutrient to get a total sum for each micronutrient. To be clear, the app sums up the micronutrient values for 1 serving of all grocery items. It is set up this way because neither the app nor the user will know for certain how many servings of a food item the user will consume in a day. Again, the target users don’t typically keep count of serving sizes because they eat whatever they want! Even if they did keep count or could input an estimation, I want to stray away from clerical work like this. Instead, the app looks at 1 serving size in order to stick with averages. Once the total sum for each micronutrient is calculated, it is compared to the user’s recommended intake value. Recommended intake values are taken from a list created by Harvard Health and are based on sex.\cite{harvard_health_2020} For each micronutrient, the app checks if the total value is less than the user’s recommended intake value for the specific micronutrient. If it is less than, that micronutrient is classified as deficient. The app then gathers all deficient micronutrients and provides food recommendations for each, as described in section 4.2. The food recommendations are displayed in a collapsible drop-down list for each deficient micronutrient. At the top of the food recommendation list, when it is expanded, a short description of the benefits of the micronutrient is displayed for reasons discussed in section 6. 
 
-\subsection{Methods}
 
-This section describes what exactly you will be working on.
-What are you building? How will it combine/incorporate ideas from the literature? Be specific about what you will be doing: talk about the specific algorithm you will implement/use, the specific dataset/platform/API, and what the outcome of your project will look like.
-All of these decisions should be justified as well.
+\section{Evaluation Metrics}
 
-\subsection{Evaluation Metrics}
+This project aims to close micronutrient gaps in the American diet through dietary diversification as described in section 4.2. Since dietary diversification means increasing the amount of micronutrient-rich foods at the household level, this is what the evaluation of this project is based on. Specifically, this project is evaluated on whether or not users buy the recommended food sources for the micronutrients they’re deficient in.
 
-This section describes how you will evaluate your project.
-What will you be measuring, and how will you measure it?
-You might think about what would result in an F, a C, or an A for comps.
-Alternately, think about what are the minimal requirements for passing the class, what you might do if you had more time and resources, and what the best case scenario would be if everything went swimmingly.
+This was measured through a series of interviews where I had target users go through the web app. I had them imagine that they were grocery shopping, scanned a random food item that I had on hand, and had them look through the recommendations for each micronutrient. I set the setting to check for all micronutrients in order to let the users see each micronutrient and their food recommendations. The interviews were centered around the question of “Would you buy or consider buying these food recommendations in real life?” If users do buy the micronutrient-rich foods, then the goal of dietary diversification for the user would be achieved. Consequently, it would decrease any micronutrient inadequacies that the user had in their grocery haul. 
 
-\subsection{Evaluation Results and Discussion}
+I could have implemented the evaluation through the intended use case by having target users run through the app while they grocery shop. Unfortunately, time constraints prevented me from executing this approach. Since the evaluations were the last step of this project, I did not have time to wait for people to have to do their grocery shopping, meet up with them at the grocery, ect. Simply finding target users and putting them in the context of this use case was the most cost-effective in regards to time for me. 
 
-limitations
+\section{Evaluation Results and Discussion}
+I conducted short, 5-minute interviews for the first round of evaluations. During the time of these interviews, the app did not display benefits of the micronutrients that users were deficient in. After conducting the interviews, I found that users generally would buy the recommended food items for the sole reason that they are foods that they typically already eat. Moreover, all interviewed users said they would not buy the “obscure” food recommendations in particular like sardines, wheat germ oil, cod liver oil, beef liver, nutritional yeast, ect. In fact, two users mentioned that the app would have to give them good reason to buy the foods that were outside of their normal eating patterns. In other words, they were not willing to try, let alone buy, new foods that they don’t typically eat. In short, users lacked motivation and willingness to buy micro nutrient-rich foods. 
 
-\subsection{Ethical Considerations}
+With this in mind, I wanted to implement a way to motivate users to actually buy the recommended foods. Therefore, I decided to include short descriptions of the benefits of each macronutrient right above its list of food sources when it is expanded. These descriptions are summaries of the benefits of each micronutrient, taken from the list created by Harvard Health that was mentioned earlier.\cite{harvard_health_2020} This way, users would be incentivized to consume more of the micronutrient if they knew how it could benefit them and, hopefully, they would want to buy its food sources as a result. 
 
-Are there any ethical concerns that might arise from your project?
-You might think about whether your project perpetuates societal inequity (or could be used by others to do so), whether the data/platforms you are using is collected with informed consent and free of bias, and whether you might be subject to technological solutionism instead of working support/better the public infrastructure.
-Include a discussion of how you plan to mitigate these issues in your project.
+The second round of interviews consisted of the same thing as the first round of interviews, except with the app’s new addition of the description of benefits. The trend of buying recommended foods that aligned with users' typical diets remained prevalent. However, the addition of the benefits did make users more inclined to buy the recommended foods for certain micronutrients. One user mentioned that her family has a history of heart diseases that she is concerned about, so she would definitely buy the food listed for vitamin B12 since B12 may lower the risk for heart disease. Another user mentioned that she would be more inclined to buy foods from the lists for Thiamin and Riboflavin since she is trying to grow her hair out and both of those micronutrients state that they’re needed for healthy hair. In short, it proved to have some positive influence on users with respect to the goal of getting them to buy/consider the recommended food items.  
 
-\subsection{Future Work, and Conclusion}
+In conclusion, all of the interviewed users for both rounds stated that they would generally buy the foods that were recommended. Although they would mainly only buy them because they’re foods that they normally eat, I don’t think the reasoning matters in terms of the goal of the project. As long as the app can get users to take home more micro nutrient-rich foods, the object of dietary diversification is met. However, the reasoning behind users’ motives can be insightful for further influencing users towards the object. For instance, if the app could customize the food recommendations to individual users’ tastes, I believe it would be even more effective considering the trend–but those are considerations for future work. 
 
-\subsection{Timeline}
+\section{Ethical Considerations}
 
-A timeline of major milestones, with specific items to be completed by specific dates/months.
-Note that this timeline must start over the summer; otherwise you will unlikely have enough time to complete a project of the expected scope.
-As part of the discussion around your timeline, talk about what you already know that would help you with the project, and what you expect to have to learn to be successful.
-Include programming languages, technical concepts, as well as processes (e.g., user testing).
+There are various ethical issues that have been at the forefront of discussions revolving around the use and effects of technology in our society. This section addresses the ethical issues that arise from this particular project. 
 
-\subsection{Code Documentation}
+\subsection{Inclusion}
 
-This section will demonstrate that you have thought through the basics of how your code will work. You should include a diagram of the overall data flow of your program, including what the inputs and outputs of each component will be, and how they will be represented.
+An important factor to consider is the inaccessibility of the web application for many people. The adopted method for recommending micro nutrient-rich foods is not one that is inclusive to everyone. More specifically, it’s not inclusive of those with food intolerances, who are of different ethnicities, and who are low-income. 
 
-\subsection{Appendices}
+First, one thing to note about both rounds of interviews is that a handful of users stated that they simply could not buy certain recommended food items due to food intolerances. This limits the amount of food options for these target users, which lowers their probability of finding a micronutrient-rich food they like. For example, 4 of the 7 food recommendations for Calcium contain lactose, so users with a food intolerance to lactose would not be able to consider them. That leaves them with 3 options of foods for increasing their Calcium intake, one of which is sardines, which almost all interviewed users labeled as obscure and would not buy them (see section 6). That most likely leaves them lactose intolerance users with about 2 solid food options for Calcium to choose from. This significantly lowers these users’ chances of choosing any food from 2 options. That would entail less of a likelihood for closing micronutrition gaps for users with food intolerances since the app wouldn’t be as effective for them. A simple fix for this would be to provide more food recommendations that leaves users with a wide array of foods to choose from–increasing the likelihood of them finding one they like and would actually buy. 
 
-\section{Tips and Advice}
+Another thing to note about the evaluation results is that most users mentioned that they would buy the food recommendation because they are things that they would normally eat. However, it’s important to point out that most of the food recommendations were typical to an American diet so they are convenient for the typical user that is assimilated to American culture. However, the U.S. is a melting pot with its population composed of many different ethnic groups, nationalities, and cultures. According to the Center for Immigration Studies, the U.S. population has a total of 46.6 million immigrants as of 2022.\cite{camarota_zeigleron} This means that there exists a great portion of the U.S. population that may not be assimilated to typical American foods like those that the app currently recommends. A prime example of this would be a user that I interviewed who was born and raised in Mexico. She voiced a concern over the lack of diversity in the food recommendations. While she said that she would buy some of the foods, she would have preferred them to be more diverse–ingredients she can use in her cultural dishes. In short, the current state of the app’s food recommendations lack consideration and inclusion of users of other cultures and ethnicities. The solution to this is, again, increasing the array of food recommendations provided. 
+
+Additionally, the web app is inaccessible to low-income individuals because it does not take into consideration the user’s budget. The app provides static food recommendations solely on the basis of its micronutrient contents, regardless of price. This means that if a user can't afford to buy the food recommendations, they won't be able to address their micronutrient inadequacies. According to the United States Census Bureau, in the year 2020 there were 11.4\%, or 37.2 million, people living in poverty.\cite{bureau_2022} This means that there is a significant portion of the population that would most likely not be able to afford to add more foods to their basket. This makes it inaccessible to those who are low income or simply cannot fit the food recommendations into their budget. 
+
+\subsection{Data Privacy}
+
+The topic of data privacy is a major ethical concern for this project. The web application will be able to collect data about what users are eating, from the scanning of grocery items. This creates ethical concerns over entities potentially having access to this data without the informed consent of the users of the web app. 
+
+For instance, in a study that explored how the diet industry exploits user data, researchers examined the traffic between different dieting applications and third parties.\cite{privacy_international_2021} They found that one particular application, BetterMe, did not appear to be sharing data with any third parties due to their privacy policy. However, the researchers found that everytime they inputted data (e.g. answering a question that the app asked) a GET request was sent to various third parties like Google Analytics, Facebook, and Yandex. A GET request is an HTTP method to retrieve data from a server. BetterMe was simply seeking to collect and process some data, and unintentionally shared it with those third parties, according to one explanation. Although it might not have intentionally shared all its data, this aims to demonstrate that data processing systems can include loopholes that allow third parties to obtain access to data. Data from fitness and diet applications are highly valuable for the market research industry and are used to create targeted ads.
+
+This is important to highlight because this project’s web app also utilizes GET requests to retrieve grocery items’ micronutrient data from Edamam API. This means that third parties can potentially access data, the same way they accessed BetterMe’s data, about what items a user buys at a grocery store. Because there is a lack of informed consent on the behalf of the user, the application data protection system must be carefully considered in order for the web app to remain ethical. While this project did not implement any data protection design due to time constraints, it is important to consider for future work. 
 
 \printbibliography
 
